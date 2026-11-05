@@ -1,0 +1,82 @@
+[
+  {
+    "path": "exercises/3-10章作业.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E4%BD%9C%E4%B8%9A/3-10%E7%AB%A0%E4%BD%9C%E4%B8%9A.pdf",
+    "sha256": "cf2eb98f6a2b2e8c488e4e73669b3335b5f752fed1040d97218eb6fdf8afd943"
+  },
+  {
+    "path": "exercises/3-10章作业答案.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E4%BD%9C%E4%B8%9A/3-10%E7%AB%A0%E4%BD%9C%E4%B8%9A%E7%AD%94%E6%A1%88.pdf",
+    "sha256": "9abb3173250f13ebbb8f8ce5e6f7d23a1c58ec6596b4ead6c882ba5a97c2b311"
+  },
+  {
+    "path": "exercises/补充习题（期末会考）.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E4%BD%9C%E4%B8%9A/%E8%A1%A5%E5%85%85%E4%B9%A0%E9%A2%98%EF%BC%88%E6%9C%9F%E6%9C%AB%E4%BC%9A%E8%80%83%EF%BC%89.pdf",
+    "sha256": "0f67212d5eeef1eb4e02cefb4db7a02d07d47aa6a12123fb7cf0a8ff533084ad"
+  },
+  {
+    "path": "heat-treatment.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E6%95%99%E6%9D%90/%E9%87%91%E5%B1%9E%E5%AD%A6%E4%B8%8E%E7%83%AD%E5%A4%84%E7%90%86%E5%8E%9F%E7%90%86%20%E5%93%88%E5%B7%A5%E5%A4%A7%E7%AC%AC%E4%B8%89%E7%89%88.pdf",
+    "sha256": "6807e7635c0fe5591a6ba7d57d89323df5b504a26c274334f295a5f6ff564d21"
+  },
+  {
+    "path": "notes/固体结构章节笔记.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E7%AC%94%E8%AE%B0/%E5%9B%BA%E4%BD%93%E7%BB%93%E6%9E%84%E7%AB%A0%E8%8A%82%E7%AC%94%E8%AE%B0.pdf",
+    "sha256": "bcdcd6b242a9e474c28efb1f6e059a02c33c420b081d02502f956ff91fd8663b"
+  },
+  {
+    "path": "notes/期中思维导图 -23级.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E7%AC%94%E8%AE%B0/%E6%9C%9F%E4%B8%AD%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%20-23%E7%BA%A7.pdf",
+    "sha256": "b728715aa199a067beea7bb8366b055d30dfe379d9b636f90b15cbd7ecacb5cd"
+  },
+  {
+    "path": "notes/期中重要概念总结-23级.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E7%AC%94%E8%AE%B0/%E6%9C%9F%E4%B8%AD%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5%E6%80%BB%E7%BB%93-23%E7%BA%A7.pdf",
+    "sha256": "2ec3037a636a2eef35ac8d62206b6483fa5feeadb054bde1d19e10e8cb5cad39"
+  },
+  {
+    "path": "notes/期末整合笔记 -22级.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E7%AC%94%E8%AE%B0/%E6%9C%9F%E6%9C%AB%E6%95%B4%E5%90%88%E7%AC%94%E8%AE%B0%20-22%E7%BA%A7.pdf",
+    "sha256": "f42dd498d56535163eb9cdf79bbf92263c75d8698b9ca46a9a63a06d1b11ddec"
+  },
+  {
+    "path": "notes/期末知识点总结 -23级.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E7%AC%94%E8%AE%B0/%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93%20-23%E7%BA%A7.pdf",
+    "sha256": "440d0715749a4fb4bf3a491b7dfdcd45b3592a9a27ee74f6b8d27d49b00ff249"
+  },
+  {
+    "path": "notes/期末知识点总结-23级.pdf",
+    "url": "https://raw.githubusercontent.com/HIT-Fireworks/22AS22302/main/%E7%AC%94%E8%AE%B0/%E6%9C%9F%E6%9C%AB%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93-23%E7%BA%A7.pdf",
+    "sha256": "65b3730cd30340d1259723a8c58ede322d0518a4c5483ebea937a34762934a1c"
+  },
+  {
+    "path": "textbook-1-hu-cai.pdf",
+    "url": "https://raw.githubusercontent.com/xhr0804/PDFbooks/master/%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80/%5Bmuchong.com%5D%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80-%E8%83%A1%E8%B5%93%E7%A5%A5-%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6%E5%87%BA%E7%89%88%E7%A4%BE.pdf",
+    "sha256": "6ca2956427905b6037a9e1532843aac800f54fda84472cf5cc0147f887ba4f03"
+  },
+  {
+    "path": "kb/source.pdf",
+    "url": "https://raw.githubusercontent.com/HeliHlKt/caikeji_zhishiku/1187761224d64d00067215b9e3ea572cec70c928/00_source/original.pdf",
+    "sha256": "622e84181fd1c4c2808e2ccfe9409a69abc0f450e9e7de0fd4685ff421c07f8e"
+  },
+  {
+    "path": "kb/chapter_map.json",
+    "url": "https://raw.githubusercontent.com/HeliHlKt/caikeji_zhishiku/1187761224d64d00067215b9e3ea572cec70c928/04_index/chapter_map.json",
+    "sha256": "cafccab64ca83555f46bf447277db2b2cd8aaff1a1df50524843d94a43891543"
+  },
+  {
+    "path": "kb/topic_routes.json",
+    "url": "https://raw.githubusercontent.com/HeliHlKt/caikeji_zhishiku/1187761224d64d00067215b9e3ea572cec70c928/04_index/topic_routes.json",
+    "sha256": "acfe7b506d2b17f3e8fabfa7ffa1e776715189696bb52dc5256d188ebd014a6d"
+  },
+  {
+    "path": "kb/cross_chapter_routes.json",
+    "url": "https://raw.githubusercontent.com/HeliHlKt/caikeji_zhishiku/1187761224d64d00067215b9e3ea572cec70c928/04_index/cross_chapter_routes.json",
+    "sha256": "3cf126765d3f12c371def8ed5b7c085b2d151295aea3371500fb713fa20e7455"
+  },
+  {
+    "path": "kb/core_concepts.md",
+    "url": "https://raw.githubusercontent.com/HeliHlKt/caikeji_zhishiku/1187761224d64d00067215b9e3ea572cec70c928/05_cards/core_concepts.md",
+    "sha256": "4d2ba9ebb01b4058a1615924b6785849b23a959740d77062ccb20b8baf74a7de"
+  }
+]

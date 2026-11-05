@@ -1,0 +1,13 @@
+interface:
+  display_name: 材科基考研训练
+  short_description: 自选教材和知识库，按原页讲题，结合笔记和公开题源生成闭卷练习
+  default_prompt: 用 $materials-science-exam-coach 先让我选资料，再按选定资料讲解我发的题，并出一道闭卷检测题。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
