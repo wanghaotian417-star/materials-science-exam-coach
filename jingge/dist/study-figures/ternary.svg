@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 299" role="img" aria-labelledby="title">
+<title id="title">三相三角形。P 位于 β 和 γ 的连线中点。</title>
+<rect x=".75" y=".75" width="598.5" height="297.5" rx="16" fill="#fbfcff" stroke="#e3e7f1"/>
+<g font-family="system-ui, PingFang SC, Microsoft YaHei, sans-serif">
+<path d="M98 247L300 46L502 247Z" stroke="#6552bd" fill="#ebe8ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M98 247L502 247" stroke="#087c76" fill="none" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><text x="195" y="281" fill="#087c76" text-anchor="middle" font-size="16" font-weight="500">等长</text><text x="406" y="281" fill="#087c76" text-anchor="middle" font-size="16" font-weight="500">等长</text><circle cx="300" cy="46" r="6" fill="#6552bd" stroke="white" stroke-width="1.7"/><text x="300" y="30" fill="#6552bd" text-anchor="middle" font-size="19" font-weight="700">α</text><circle cx="98" cy="247" r="6" fill="#087c76" stroke="white" stroke-width="1.7"/><text x="80" y="256" fill="#087c76" text-anchor="middle" font-size="19" font-weight="700">β</text><circle cx="502" cy="247" r="6" fill="#087c76" stroke="white" stroke-width="1.7"/><text x="520" y="256" fill="#087c76" text-anchor="middle" font-size="19" font-weight="700">γ</text><circle cx="300" cy="247" r="6.5" fill="#243152" stroke="white" stroke-width="1.7"/><text x="287" y="237" fill="#243152" text-anchor="middle" font-size="19" font-weight="700">P</text>
+</g>
+</svg>

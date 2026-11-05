@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 236" role="img" aria-labelledby="title">
+<title id="title">p 四电子基态。一个轨道有一对反向自旋电子，另外两个轨道各有一个电子。</title>
+<rect x=".75" y=".75" width="598.5" height="234.5" rx="16" fill="#fbfcff" stroke="#e3e7f1"/>
+<g font-family="system-ui, PingFang SC, Microsoft YaHei, sans-serif">
+<rect x="126" y="93" width="88" height="84" rx="9" fill="white" stroke="#6552bd" stroke-width="1.6"/><text x="155" y="148" fill="#087c76" text-anchor="middle" font-size="37" font-weight="750">↑</text><text x="187" y="148" fill="#b35829" text-anchor="middle" font-size="37" font-weight="750">↓</text><rect x="256" y="93" width="88" height="84" rx="9" fill="white" stroke="#6552bd" stroke-width="1.6"/><text x="300" y="148" fill="#087c76" text-anchor="middle" font-size="37" font-weight="750">↑</text><rect x="386" y="93" width="88" height="84" rx="9" fill="white" stroke="#6552bd" stroke-width="1.6"/><text x="430" y="148" fill="#087c76" text-anchor="middle" font-size="37" font-weight="750">↑</text><text x="300" y="63" fill="#243152" text-anchor="middle" font-size="19" font-weight="700">三个简并 p 轨道</text><text x="171" y="206" fill="#243152" text-anchor="middle" font-size="16" font-weight="500">成对</text><text x="301" y="206" fill="#087c76" text-anchor="middle" font-size="16" font-weight="500">未成对</text><text x="431" y="206" fill="#087c76" text-anchor="middle" font-size="16" font-weight="500">未成对</text>
+</g>
+</svg>
