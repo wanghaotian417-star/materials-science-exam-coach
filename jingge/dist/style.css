@@ -88,3 +88,9 @@ aside,.workspace>header,.card-entry,.card-switch,.paper-count input,.card-search
 .diagram:not(.study-figure),.source-figure{background:#fbfcff}.diagram figcaption{color:#4f6377}.study-figure figcaption{color:var(--muted)}
 @media(max-width:680px){.hero.lab-hero{padding-right:20px}.lab-hero .lab-mascot{position:relative;inset:auto;width:100%;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px}.lab-mascot img{width:98px}}
 @media(prefers-reduced-motion:reduce){.mascot-trigger:hover img{transform:none}}
+.lab-hero p{color:#bdcee3}
+.question textarea,.feedback,.topic:hover{background:#172d46;color:var(--ink)}
+.paper-error{color:#ff9fac}
+.tag.priority-high{background:#154869;color:#b2efff}
+.tag.priority-normal{background:#154739;color:#9bf3c9}
+.tag.priority-other{background:#5b3e1b;color:#ffda97}

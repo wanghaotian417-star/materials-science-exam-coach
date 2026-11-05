@@ -60,3 +60,7 @@ python materials-science-exam-coach/scripts/fetch_materials.py --path kb/source.
 - 改讲题或批改时，调整 `SKILL.md` 的讲题格式和评分规则。用一道带图题、一题有原题号的闭卷题分别检查引用、判分和答案隐藏。
 
 生成的题库若使用公开题源，应保留原题链接、题号与页码，并单独标注改编题和自编题。
+
+## 晶格 · 材科基研习室
+
+创作人 **Drinking Ice Man**。进入 [研习室源码与自部署说明](jingge/README.md)，或[下载公开版 ZIP](jingge/downloads/jingge-open-source.zip)。
