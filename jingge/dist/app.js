@@ -2,7 +2,7 @@
 const $=s=>document.querySelector(s);
 const main=$("#main");
 const DAY=86400000;
-const names={home:"学习总览",quiz:"闭卷训练",cards:"知识卡片",review:"错题复测",library:"教材与资料"};
+const names={home:"学习总览",quiz:"闭卷训练",cards:"知识卡片",review:"错题复测",library:"教材与资料",ai:"AI 制题"};
 const topicName=key=>topics.find(([id])=>key===id)?.[1]??"全部专题";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function mathText(value){
@@ -23,6 +23,7 @@ function load(){
  catch{return fresh();}
 }
 let state=load();
+if(Array.isArray(state.personal))state.personal.forEach(addPersonalItem);
 function save(){
  try{localStorage.setItem("jingge-study-v1",JSON.stringify(state));}
  catch{$("#saveStatus").textContent="浏览器未能保存这次记录";}
@@ -49,6 +50,7 @@ function display(){
  if(page==="cards")cardsView();
  if(page==="review")reviewView();
  if(page==="library")libraryView();
+ if(page==="ai")aiView();
 }
 function home(){
  const completed=state.attempts.length;
@@ -69,9 +71,10 @@ function home(){
 }
 function quizPool(){
  const sourceItems=paperBank.filter(q=>{
+  if(quiz.source==="personal")return q.personal;
   if(quiz.source==="exam")return q.year&&(quiz.year==="all"||String(q.year)===quiz.year);
   if(quiz.source==="glossary")return q.glossaryRefs?.length;
-  return quiz.source==="all"||!q.year;
+  return quiz.source==="all"||(!q.year&&!q.personal);
  });
  return sourceItems.filter(q=>quiz.topic==="all"||q.topic===quiz.topic);
 }
@@ -136,6 +139,7 @@ function pageSpan(first,last=first){
  return first===last?`PDF 第 ${first} 页`:`PDF 第 ${first}–${last} 页`;
 }
 function sourceLabel(q){
+ if(q.personal)return q.page?`个人资料 · AI 草稿已确认 · PDF 第 ${q.page} 页`:"个人资料 · AI 草稿已确认";
  if(q.year)return `云南大学 837 · ${q.year} 年 · ${q.num} · ${pageSpan(q.page,q.lastPage)}${q.transcribed?" · 填空整理":""}`;
  if(q.glossaryRefs?.length)return "《名词解释》27 版 · "+q.glossaryRefs.map(r=>`条目 ${r.number}（${pageSpan(r.page,r.lastPage)}）`).join("、");
  return "通用练习";
@@ -162,6 +166,7 @@ function answerMarkup(q){
  ${q.solutionFigure?studyFigure(q.solutionFigure,`${topicName(q.topic)}计算图解`,"解析图 · 教材模型示意"):""}
  ${solution}
  ${sourceFigures(q.answerImages,"资料参考答案原图")}
+ ${q.personal&&q.quote?`<details><summary>查看原文依据${q.page?` · PDF 第 ${q.page} 页`:""}</summary><p class="multiline">${esc(q.quote)}</p></details>`:""}
  ${q.note?`<p class="note"><strong>校核说明</strong> ${esc(q.note)}</p>`:""}`;
 }
 function questionBody(q,n){
@@ -204,7 +209,7 @@ function quizView(){
  const count=singlePool(pool).length;
  main.innerHTML=intro("闭卷训练","可按题型抽单题，也可以分别设定各题型题量来组卷。")+ `<section class="panel">
   <div class="form-row">
-   <label>题源<select id="quizSource">${option("general","通用题库",quiz.source)}${examYears.length?option("exam","云南大学 837 历年题",quiz.source):""}${importedGlossary.length?option("glossary","《名词解释》27 版",quiz.source):""}${option("all","全部题源",quiz.source)}</select></label>
+   <label>题源<select id="quizSource">${option("general","通用题库",quiz.source)}${examYears.length?option("exam","云南大学 837 历年题",quiz.source):""}${importedGlossary.length?option("glossary","《名词解释》27 版",quiz.source):""}${option("personal","个人题库",quiz.source)}${option("all","全部题源",quiz.source)}</select></label>
    ${quiz.source==="exam"?`<label>年份<select id="quizYear">${option("all","全部收录年份",quiz.year)}${examYears.map(year=>option(String(year),`${year} 年`,quiz.year)).join("")}</select></label>`:""}
    <label>专题<select id="quizTopic">${topicOptions(quiz.topic)}</select></label>
   </div>
@@ -230,7 +235,7 @@ function cardCatalogOpen(){
  return location.hash==="#cards/all";
 }
 function inCardScope(q){
- return (card.topic==="all"||q.topic===card.topic)&&(card.source==="all"||q.glossaryRefs?.length);
+ return (card.topic==="all"||q.topic===card.topic)&&(card.source==="all"||(card.source==="personal"?q.personal:q.glossaryRefs?.length));
 }
 function cardsByType(){
  return studyCards.filter(q=>inCardScope(q)&&(card.type==="all"||q.type===card.type));
@@ -248,7 +253,7 @@ function referenceMarkup(q){
  <span>§${esc(ref.section)} ${esc(ref.title)} · 印刷第 ${ref.page} 页起</span></div>`;
 }
 function cardAttribution(q){
- return referenceMarkup(q)+(q.glossaryRefs?.length?`<div class="source-tag card-provenance">${esc(sourceLabel(q))}</div>`:"");
+ return referenceMarkup(q)+((q.personal||q.glossaryRefs?.length)?`<div class="source-tag card-provenance">${esc(sourceLabel(q))}</div>`:"");
 }
 function cardContent(q){
  return `<div class="card-solution">${answerMarkup(q)}${cardAttribution(q)}</div>`;
@@ -283,7 +288,7 @@ function cardsView(){
  const mode=`<div class="card-switch" aria-label="卡片视图"><a href="#cards" ${isCatalog?"":'aria-current="page"'}>闪卡记忆</a><a href="#cards/all" ${isCatalog?'aria-current="page"':""}>卡片总览</a></div>`;
  const filters=`<section class="panel card-filters"><div class="form-row card-controls">
   <label for="cardChapter">章节<select id="cardChapter">${option("all","全部章节",card.topic)}${cardChapters.map(([id,title],i)=>option(id,`第 ${i+1} 章 · ${title}`,card.topic)).join("")}</select></label>
-  <label for="cardSource">资料<select id="cardSource">${option("all","全部卡片",card.source)}${importedGlossary.length?option("glossary","《名词解释》27 版",card.source):""}</select></label>
+  <label for="cardSource">资料<select id="cardSource">${option("all","全部卡片",card.source)}${option("personal","个人资料",card.source)}${importedGlossary.length?option("glossary","《名词解释》27 版",card.source):""}</select></label>
   ${isCatalog?`<label for="cardSearch" class="card-search">搜索卡片<input id="cardSearch" type="search" placeholder="如：位错、共晶、杠杆定律" value="${esc(card.query)}"></label>`:
    `<label for="cardMode">范围<select id="cardMode">${option("due","到期与新卡",card.mode)}${option("all","全部卡片",card.mode)}</select></label><span class="muted">${list.length} 张可复习</span>`}
  </div><div class="type-list card-type-filter" aria-label="卡片类型">${["all",...cardTypes].map((type,i)=>`<button type="button" class="chapter-option" data-card-type="${type}" aria-pressed="${card.type===type}">${i?`${type} · ${counts[i-1]}`:`全部类型 · ${counts.reduce((a,b)=>a+b,0)}`}</button>`).join("")}</div></section>`;
@@ -432,5 +437,6 @@ function hashChanged(){
  if(page==="quiz"&&topics.some(([id])=>id===topic)){paper.items=[];quiz={topic,type:"all",source:"general",year:"all",question:null,result:null,review:false};pick();}
  display();main.focus({preventScroll:true});
 }
+main.addEventListener("submit",aiSubmit);
 window.addEventListener("hashchange",hashChanged);
 hashChanged();
